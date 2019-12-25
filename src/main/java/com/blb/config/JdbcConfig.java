@@ -8,14 +8,15 @@ import org.springframework.context.annotation.PropertySource;
 
 import javax.sql.DataSource;
 
+
 /**
  * @Author: Mr.Xue
  * @Description:
  * @Date: Created in 13:24 2019/12/25
  */
-@Configuration
-@PropertySource("classpath:jdbc.properties")
-public class JDBCCongfig {
+//@Configuration
+//@PropertySource("classpath:jdbc.properties")
+public class JdbcConfig {
     @Value("${jdbc.driverClassName}")
     private String driverClassName;
     @Value("${jdbc.url}")
@@ -25,7 +26,7 @@ public class JDBCCongfig {
     @Value("${jdbc.password}")
     private String password;
 
-    @Bean
+    //@Bean
     public DataSource dataSource(){
         DruidDataSource dataSource = new DruidDataSource();
         dataSource.setDriverClassName(driverClassName);
